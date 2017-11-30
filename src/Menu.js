@@ -31,7 +31,7 @@ class Menu extends Component {
       console.log(title)
     }
     else {
-      return '/' + title.toLowerCase() + '/';
+      return title.toLowerCase();
     }
   }
 

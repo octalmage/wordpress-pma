@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import WPHeader from './WPHeader'
-import Menu from './Menu'
-import SinglePage from './SinglePage';
-import Posts from './Posts'
-import Footer from './Footer'
 import Main from './Main'
 import {
   BrowserRouter,
@@ -28,7 +23,7 @@ constructor(props){
 
   render() {
     return (
-      // Router. See Main.js for more code. 
+      // Router. See Main.js for more code.
       <BrowserRouter>
         <Main />
       </BrowserRouter>

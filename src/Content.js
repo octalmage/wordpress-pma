@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Posts from './Posts';
-import SinglePage from './SinglePage'
-import Footer from './Footer'
-import Menu from './Menu'
+import SinglePage from './SinglePage';
 import {
   BrowserRouter as Router,
   Route,
@@ -15,8 +13,7 @@ class Content extends Component {
     return(
       <Switch>
         <Route exact path='/' component={Posts}/>
-        <Route path='/ableton' component={Footer}/>
-        <Route path='/bash' component={Menu}/>
+        <Route path=':slug' component={SinglePage}/>
       </Switch>
 
     );

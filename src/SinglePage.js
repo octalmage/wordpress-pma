@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-
-// To get a SinglePage or Post we'll pass in the page ID as props. <SinglePage id="26" /> 
+// To get a SinglePage or Post we'll pass in the object's slug for navigation purposes
+// /posts?fslug=${this.props.slug} or /pages?slug=${this.props.slug}
 class SinglePage extends Component {
 
   constructor(props){
@@ -17,7 +17,7 @@ class SinglePage extends Component {
 
   componentDidMount() {
     console.log("Mounted")
-    const url = `https://defc0re.wpengine.com/wp-json/wp/v2/pages/${this.props.id}`;
+    const url = `https://defc0re.wpengine.com/wp-json/wp/v2/pages?slug=${this.props}`;
     fetch(url)
     .then(results => {
       return results.json();
