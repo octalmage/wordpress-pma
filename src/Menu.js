@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Menu extends Component {
 
@@ -25,6 +25,10 @@ class Menu extends Component {
     });
   }
 
+  shouldComponentUpdate() {
+    return true;
+  }
+
   buildLink(title) {
     if (title.toLowerCase() === 'home') {
       return '/';
@@ -40,7 +44,7 @@ class Menu extends Component {
       <div>
         {this.state.menu.map((menu, i) => (
           <div className="test">
-              <div> <NavLink to={`${this.buildLink(menu.title)}`}>{menu.title}</NavLink></div>
+              <div> <Link to={`${this.buildLink(menu.title)}`} onClick={this.shouldComponentUpdate()}>{menu.title}</Link></div>
           </div>
         ))}
       </div>

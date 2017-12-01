@@ -18,20 +18,20 @@ class SinglePage extends Component {
   componentWillReceiveProps(newProps) {
     this.props = newProps;
   }
+
   componentDidMount() {
-    console.log(this.props);
+    //console.log(this.props);
     const url = `https://defc0re.wpengine.com/wp-json/wp/v2/pages?slug=${this.props.match.params.slug}`;
     fetch(url)
     .then(results => {
       return results.json();
     }).then(data => {
-        console.log(data.map(item => item));
-
+        //console.log(data.map(item => item));
         const id = data[0].id;
-        console.log(this.props.match.params.slug);
+        //console.log(this.props.match.params.slug);
         const title = data[0].title.rendered;
         const date = data[0].date;
-        console.log(date);
+        //console.log(date);
         const content = data[0].content.rendered;
         //const styles = data.styles.map(styles => styles);
         //const tracklist = data.tracklist.map(track => track.title);

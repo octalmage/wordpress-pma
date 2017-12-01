@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 import Posts from './Posts';
 import SinglePage from './SinglePage';
 import {
-  BrowserRouter as Router,
   Route,
-  Link,
   Switch
 } from 'react-router-dom'
 
 class Content extends Component {
+  component
   render(){
     return(
       <Switch>
+        <Route path='/' exact component={Posts}/>
         <Route path='/:slug' params=':slug' component={SinglePage}/>
-
       </Switch>
 
     );
