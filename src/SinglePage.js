@@ -19,6 +19,7 @@ class SinglePage extends Component {
     this.props = newProps;
   }
 
+
   componentDidMount() {
     //console.log(this.props);
     const url = `https://defc0re.wpengine.com/wp-json/wp/v2/pages?slug=${this.props.match.params.slug}`;

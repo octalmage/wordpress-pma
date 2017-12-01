@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-
+import SinglePage from './SinglePage'
 class Menu extends Component {
 
   constructor(props){
@@ -25,10 +25,6 @@ class Menu extends Component {
     });
   }
 
-  shouldComponentUpdate() {
-    return true;
-  }
-
   buildLink(title) {
     if (title.toLowerCase() === 'home') {
       return '/';
@@ -37,6 +33,10 @@ class Menu extends Component {
     else {
       return title.toLowerCase();
     }
+  }
+
+  shouldComponentUpdate() {
+    return true;
   }
 
   render(){
