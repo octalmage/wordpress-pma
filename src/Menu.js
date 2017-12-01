@@ -40,7 +40,7 @@ class Menu extends Component {
       <div>
         {this.state.menu.map((menu, i) => (
           <div className="test">
-              <div> <Link to={`${this.buildLink(menu.title)}`}> {menu.title}</Link></div>
+              <div> <Link to={`${this.buildLink(menu.title)}`}>{menu.title}</Link></div>
           </div>
         ))}
       </div>

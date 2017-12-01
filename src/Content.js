@@ -12,8 +12,8 @@ class Content extends Component {
   render(){
     return(
       <Switch>
-        <Route exact path='/' component={Posts}/>
-        <Route path=':slug' component={SinglePage}/>
+        <Route exact path='/:slug' params=':slug' component={SinglePage}/>
+
       </Switch>
 
     );

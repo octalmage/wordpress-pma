@@ -8,6 +8,7 @@ class SinglePage extends Component {
     super(props);
 
     this.state = {
+      postData: {},
       id: '',
       title: '',
       content: '',
@@ -16,16 +17,20 @@ class SinglePage extends Component {
   }
 
   componentDidMount() {
-    console.log("Mounted")
-    const url = `https://defc0re.wpengine.com/wp-json/wp/v2/pages?slug=${this.props}`;
+    console.log(this.props);
+    const url = `https://defc0re.wpengine.com/wp-json/wp/v2/pages?slug=${this.props.match.params.slug}`;
     fetch(url)
     .then(results => {
       return results.json();
     }).then(data => {
-        const id = data.id;
-        const title = data.title.rendered;
+        console.log(data.map(item => item));
+
+        const id = data[0].id;
+        console.log(this.props.match.params.slug);
+        const title = data[0].title.rendered;
         const date = data.date;
-        const content = data.content.rendered;
+        console.log(date);
+        const content = data[0].content.rendered;
         //const styles = data.styles.map(styles => styles);
         //const tracklist = data.tracklist.map(track => track.title);
         //const artists = data.artists.map(artist => artist.name);
@@ -48,9 +53,9 @@ class SinglePage extends Component {
   render(){
     return(
       <div>
-        <h3>{this.state.title}</h3>
+
         <h5>{this.state.date}</h5>
-        <span>{this.state.content}</span>
+        <div>{this.state.content}</div>
       </div>
     );
   }
