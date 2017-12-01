@@ -12,7 +12,7 @@ class Content extends Component {
   render(){
     return(
       <Switch>
-        <Route exact path='/:slug' params=':slug' component={SinglePage}/>
+        <Route path='/:slug' params=':slug' component={SinglePage}/>
 
       </Switch>
 

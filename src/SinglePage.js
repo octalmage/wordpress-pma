@@ -15,7 +15,9 @@ class SinglePage extends Component {
       date: '',
     };
   }
-
+  componentWillReceiveProps(newProps) {
+    this.props = newProps;
+  }
   componentDidMount() {
     console.log(this.props);
     const url = `https://defc0re.wpengine.com/wp-json/wp/v2/pages?slug=${this.props.match.params.slug}`;
@@ -28,7 +30,7 @@ class SinglePage extends Component {
         const id = data[0].id;
         console.log(this.props.match.params.slug);
         const title = data[0].title.rendered;
-        const date = data.date;
+        const date = data[0].date;
         console.log(date);
         const content = data[0].content.rendered;
         //const styles = data.styles.map(styles => styles);
@@ -53,7 +55,7 @@ class SinglePage extends Component {
   render(){
     return(
       <div>
-
+        <h3>{this.state.title}</h3>
         <h5>{this.state.date}</h5>
         <div>{this.state.content}</div>
       </div>

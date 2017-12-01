@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Link } from 'react-router-dom'
+import { BrowserRouter, Link, NavLink } from 'react-router-dom'
 
 class Menu extends Component {
 
@@ -40,7 +40,7 @@ class Menu extends Component {
       <div>
         {this.state.menu.map((menu, i) => (
           <div className="test">
-              <div> <Link to={`${this.buildLink(menu.title)}`}>{menu.title}</Link></div>
+              <div> <NavLink to={`${this.buildLink(menu.title)}`}>{menu.title}</NavLink></div>
           </div>
         ))}
       </div>
